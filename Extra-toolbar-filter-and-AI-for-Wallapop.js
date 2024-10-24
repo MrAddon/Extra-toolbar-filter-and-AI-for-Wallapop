@@ -54,7 +54,8 @@
         isExclusiveSearch = false;
         ads.forEach(ad => {
             ad.style.display = '';
-            ad.querySelector('input[type="checkbox"]').checked = false;
+            const checkbox = ad.querySelector('input[type="checkbox"]');
+            if (checkbox) checkbox.checked = false; // Solo si existe el checkbox
         });
         selectedAds = [];
         updateFilterMarker('');
@@ -169,10 +170,13 @@
 
     function addCheckboxesToAds() {
         ads.forEach(ad => {
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.style.marginRight = '5px';
-            ad.prepend(checkbox);
+            // Verificar si ya existe un checkbox para no duplicar
+            if (!ad.querySelector('input[type="checkbox"]')) {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.style.marginRight = '5px';
+                ad.prepend(checkbox);
+            }
         });
     }
 
@@ -182,7 +186,7 @@
                 mutation.addedNodes.forEach(node => {
                     if (node.nodeType === 1 && node.matches('a.ItemCardList__item')) {
                         ads.push(node);
-                        addCheckboxesToAds();
+                        addCheckboxesToAds(); // Solo se añade si es un nuevo anuncio
                         if (currentFilter) checkIfContainsTerm(node.href, node, currentFilter);
                     }
                 });
