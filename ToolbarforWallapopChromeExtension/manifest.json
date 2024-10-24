@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Wallapop Cleaner",
+  "version": "1.0",
+  "description": "Remueve anuncios de yaencontre en Wallapop.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://es.wallapop.com/app/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
