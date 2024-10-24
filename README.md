@@ -4,6 +4,8 @@
 
 `Extra toolbar filter and AI for Wallapop website` es un script desarrollado para la plataforma Wallapop, que permite filtrar los anuncios según un término de búsqueda. Además, ofrece la posibilidad de realizar búsquedas excluyentes, mostrando solo los anuncios que **no** contienen el término especificado. También incluye funcionalidades adicionales como comparar anuncios, mostrar las tres mejores oportunidades y permitir la integración con la API de OpenAI (ChatGPT).
 
+![Extra-toolbar-filter-and-AI-for-Wallapop.png](Extra-toolbar-filter-and-AI-for-Wallapop.png)
+
 ## Instalación
 
 1. Instala la extensión de Tampermonkey ( https://www.tampermonkey.net/ ) o cualquier otra extensión compatible con scripts de usuario en tu navegador.
